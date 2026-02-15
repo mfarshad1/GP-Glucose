@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 1) Filter all_host_props_training.csv IN-PLACE:
+#    keep rows where paper_name (2nd column) is H<number>
+#    OR Real_Name (1st column) starts with roelen|davis|hub4|stoddart
+train="all_host_props_training.csv"
+tmp="${train}.tmp"
+
+awk -F',' '
+  NR==1 {print; next}
+  ($2 ~ /^H[0-9]+$/) || ($1 ~ /^(roelen|davis|hub4|stoddart)/) {print}
+' "$train" > "$tmp" && mv "$tmp" "$train"
+
+echo "Updated in-place: $train"
+
+# 2) Create all_host_props_filtered.csv from all_host_props.csv,
+#    keeping rows whose Real_Name (1st col) exists in the filtered training file
+#    OR Real_Name starts with roelen|davis|hub4|stoddart
+props="all_host_props.csv"
+out="all_host_props_filtered.csv"
+
+awk -F',' '
+  NR==FNR {
+    if (FNR==1) next
+    a[$1]=1
+    next
+  }
+  FNR==1 {print; next}
+  ($1 in a) || ($1 ~ /^(roelen|davis|hub4|stoddart)/) {print}
+' "$train" "$props" > "$out"
+
+echo "Wrote: $out"
+

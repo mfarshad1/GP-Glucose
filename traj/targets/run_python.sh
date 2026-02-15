@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Define the output file
+output_file="output.txt"
+
+# Ensure the output file is empty or create it if it doesn't exist
+> "$output_file"
+
+# Add header line to the output file
+echo "Real_Name Free_Energy_Cal_NS Free_Energy_Cal_MO Free_Energy_Cal_LIT" >> "$output_file"
+
+# Define the range of numbers
+for number in {06..10}; do
+    # Loop through each parent directory
+    for parent_dir in /afs/crc/group/whitmer/Data-MF-"$number"/amber/*/Umbrella_sampling/umbrella/run_long_1; do
+       pkill evince
+       # Extract the real_name from the parent directory path
+        real_name=$(dirname "$parent_dir" | awk -F'/' '{print $(NF-2)}')
+
+        echo "Running for real_name: $real_name"
+
+        # Get the length of pullf-files.dat
+        length=$(wc -l < "${parent_dir}/pullf-files.dat")
+
+        # Substitute variables in the Python code and save to a temporary file
+        sed -e "s/{number}/$number/g" \
+            -e "s/{real_name}/$real_name/g" \
+            -e "s/{length}/$length/g" \
+            -e "s|/afs/crc/group/whitmer/Data-MF-{number}/amber/{real_name}/Umbrella_sampling/umbrella/run_long_1|${parent_dir}|g" \
+            hist+pmf_all-v02.py > temp_script.py
+
+        # Run the Python script and capture the last line of output
+        output=$(python temp_script.py | tail -n 1)
+
+        # Store the output (real_name and calculated values) in the output file
+        echo "$output" >> "$output_file"
+
+        # Remove the temporary script
+        #rm temp_script.py
+       	# evince hist+pmf1_${real_name}.pdf &
+    done
+done
+

@@ -1,0 +1,39 @@
+Loading python/3.10.5
+  Loading requirement: tcl/8.6.10
+Traceback (most recent call last):
+  File "/afs/crc.nd.edu/user/m/mfarshad/Private/ML/traj/host-pdbs/pore_diameter.py", line 60, in <module>
+    u = mda.Universe(pdb, trr)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/core/universe.py", line 356, in __init__
+    topology = _topology_from_file_like(self.filename,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/core/universe.py", line 118, in _topology_from_file_like
+    raise sys.exc_info()[1] from err
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/core/universe.py", line 110, in _topology_from_file_like
+    topology = p.parse(**kwargs)
+               ^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/topology/GROParser.py", line 84, in parse
+    with openany(self.filename) as inf:
+  File "/opt/crc/c/conda/23.5.2/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/lib/util.py", line 318, in openany
+    stream = anyopen(datasource, mode=mode, reset=reset)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/lib/util.py", line 398, in anyopen
+    stream = _get_stream(datasource, openfunc, mode=mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/lib/util.py", line 440, in _get_stream
+    raise sys.exc_info()[1] from err
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/lib/util.py", line 434, in _get_stream
+    stream = openfunction(filename, mode=mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/lib/picklable_file_io.py", line 502, in bz2_pickle_open
+    binary_file = BZ2Picklable(name, bz_mode)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/afs/crc.nd.edu/user/m/mfarshad/.local/lib/python3.11/site-packages/MDAnalysis/lib/picklable_file_io.py", line 283, in __init__
+    super().__init__(name, mode)
+  File "/opt/crc/c/conda/23.5.2/lib/python3.11/bz2.py", line 81, in __init__
+    self._fp = _builtin_open(filename, mode)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/afs/crc/group/whitmer/Data-MF-05/ML/traj/host_host-pdbs.gro'

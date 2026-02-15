@@ -1,0 +1,899 @@
+ *** Program HOLE ***
+ 
+ If results of this run are reported or published, please
+ cite the publication listed below.
+ For the HOLE program:
+   Smart, O.S., Goodfellow, J.M., Wallace, B.A. (1993). 
+   The pore dimensions of gramicidin A. 
+   Biophys. J., 65, 2455-2460.
+ 
+ Originally written by Oliver Smart at Birkbeck College from April 1992.
+ Copyright 1993-2005 Oliver Smart
+ Copyright 2014-2015 SmartSci Limited.
+ Copyright 2016 Oliver Smart.
+ 
+ For help on HOLE suite see  http://www.holeprogram.org/
+ 
+ HOLE release 2.2.005 (07 August 2016) 
+ 
+ usage subject to Apache License, Version 2.0 
+ see http://www.apache.org/licenses/LICENSE-2.0 
+
+ Control variables read:
+
+! Input file for Oliver Smart's HOLE program
+! written by MDAnalysis.analysis.hole2.HoleAnalysis
+! for a Universe
+! u = mda.Universe(/afs/crc.nd.edu/user/m/mfarshad/Private/ML-new/traj/host-T1+2
+!    /afs/crc.nd.edu/user/m/mfarshad/Private/ML-new/traj/host-T1+2/host_T1+2.trr
+!   )
+! Frame 45
+
+COORD  /tmp/2550317.1.long/tmp_5ah9x_c.pdb
+RADIUS simple2.rad
+SPHPDB hole045.sph
+SAMPLE 0.200000
+ENDRAD 22.000000
+IGNORE SOL WAT TIP HOH K   NA  CL
+SHORTO 0
+RASEED 31415
+CPOINT 39.7366735538 40.0229062637 39.4147390922
+
+
+ WARNING have not found a CVECT record - will try to guess
+ Input pdb filename read as:    '/tmp/2550317.1.long/tmp_5ah9x_c.pdb'
+ Input vdW radius file read as: 'simple2.rad'
+ point in channel:   39.737  40.023  39.415
+ channel vector:   ************************
+ sampling distance between planes:    0.200
+
+ graphics conditions:
+ binary plot output file name: NONE
+ Dot density:    10
+ Draw dots?           T
+ Draw close contacts? F
+ Draw centre line?    T
+ Produce spikes rather than dots? F
+ Seed for random number generator:     31415 (0 means value set by program)
+ Radius above which a result is regarded as an 'end':  22.000
+ Pdb format file for sphere centres: hole045.sph
+
+ Monte Carlo conditions:
+  no of steps:  1000
+  maximum displacement   0.100 angs
+  'kT' initial   0.100 angs
+ The spherebox and capsule options are turned off.
+ (No molqpt card so will not write qpt file of the molecule)
+ IGNORE card read so will ignore residue types: SOL WAT TIP HOH K   NA  CL
+ no SHORTO card read so will produce full textual output
+ As no PEGRAT card was found will not produce PEG polymer exclusion graph
+ (No 2DMAPS card specified so will not produce 2D property maps)
+ Have not found a CUT card.  Normal calculation using
+   Cutoff lists with a cutsize=       1.000
+   (if you wish to turn off option use a CUT -1 card)
+
+ Have read     7 bond radius records and
+              16 vdW radius records.
+ From file: simple2.rad
+
+ Have read    96 atom records.
+ From file: /tmp/2550317.1.long/tmp_5ah9x_c.pdb
+ Will not produce graphical output
+
+ Have opened file for pdb format output of sphere centres:  hole045.sph
+
+  Seed integer used by ran # generator on this run      31415
+
+ 
+ S/R cguess will try to guess CPOINT and/or CVECT
+ 
+ THESE GUESSES MAY WELL BE WRONG!!!!
+ Routine relies on having a reasonably symmetric
+ channel oriented along x, y or z vector
+ YOU ARE STRONGLY ADVISED TO CHECK THE RESULTS
+                       WITH MOLECULAR GRAPHICS
+ testing points from cpoint in X, Y then Z direction
+   point                   pore radius
+direction     1
+  34.737  40.023  39.415    -0.778
+  35.737  40.023  39.415    -1.181
+  36.737  40.023  39.415    -0.529
+  37.737  40.023  39.415     0.395
+  38.737  40.023  39.415     1.365
+  39.737  40.023  39.415     1.768
+  40.737  40.023  39.415     0.811
+  41.737  40.023  39.415    -0.096
+  42.737  40.023  39.415    -0.814
+  43.737  40.023  39.415    -1.204
+  44.737  40.023  39.415    -0.525
+ Average pore radius along the line=     -0.072
+direction     2
+  39.737  35.023  39.415    -0.189
+  39.737  36.023  39.415    -0.261
+  39.737  37.023  39.415     0.062
+  39.737  38.023  39.415     0.755
+  39.737  39.023  39.415     1.509
+  39.737  40.023  39.415     1.768
+  39.737  41.023  39.415     1.862
+  39.737  42.023  39.415     1.770
+  39.737  43.023  39.415     1.721
+  39.737  44.023  39.415     1.097
+  39.737  45.023  39.415     0.604
+ Average pore radius along the line=      0.973
+direction     3
+  39.737  40.023  34.415     2.181
+  39.737  40.023  35.415     1.945
+  39.737  40.023  36.415     1.956
+  39.737  40.023  37.415     1.723
+  39.737  40.023  38.415     1.673
+  39.737  40.023  39.415     1.768
+  39.737  40.023  40.415     2.022
+  39.737  40.023  41.415     1.505
+  39.737  40.023  42.415     0.560
+  39.737  40.023  43.415    -0.314
+  39.737  40.023  44.415    -0.954
+ Average pore radius along the line=      1.279
+ Best direction is found to be     3
+(1=X,2=Y,3=Z)
+ s/r cguess has produced initial values for cpoint &/or cvect:
+CPOINT      39.7367     40.0229     39.4147
+CVECT        0.0000      0.0000      1.0000
+ THESE GUESSES MAY WELL BE WRONG!!!!
+ Routine relies on having a reasonably symmetric
+ channel oriented along x, y or z vector
+ YOU ARE STRONGLY ADVISED TO CHECK THE RESULTS
+                       WITH MOLECULAR GRAPHICS
+ 
+ 
+  Some routines (e.g. conn) need vectors normal to cvect: 
+     EAST Zero degrees angle is along vector    1.000   0.000   0.000
+     NORTH  90 degrees angle is along vector    0.000  -1.000   0.000
+ highest radius point found:
+  at point   39.452  40.099  39.415
+  closest atom surface    2.050   C22 URE X    1
+  2nd closest surface     2.051   C6  URE X    1
+  found on step   42
+ current point:
+  at point   39.566  41.362  39.415
+  closest atom surface    2.017   C22 URE X    1
+  2nd closest surface     2.018   C8  URE X    1
+  found on step  959
+  no. of rejections          409
+ stored as     0
+
+ highest radius point found:
+  at point   39.462  40.014  39.615
+  closest atom surface    2.082   C6  URE X    1
+  2nd closest surface     2.082   C18 URE X    1
+  found on step  662
+ current point:
+  at point   39.462  39.985  39.615
+  closest atom surface    2.079   C6  URE X    1
+  2nd closest surface     2.082   C18 URE X    1
+  found on step  950
+  no. of rejections          396
+ stored as     1
+
+ highest radius point found:
+  at point   39.671  40.858  39.815
+  closest atom surface    2.097   C7  URE X    1
+  2nd closest surface     2.099   C23 URE X    1
+  found on step  957
+  this is also current point
+  no. of rejections          399
+ stored as     2
+
+ highest radius point found:
+  at point   39.743  40.918  40.015
+  closest atom surface    2.114   C23 URE X    1
+  2nd closest surface     2.129   C6  URE X    1
+  found on step  116
+ current point:
+  at point   39.683  40.587  40.015
+  closest atom surface    2.092   C6  URE X    1
+  2nd closest surface     2.095   C23 URE X    1
+  found on step  996
+  no. of rejections          379
+ stored as     3
+
+ highest radius point found:
+  at point   39.576  42.810  40.215
+  closest atom surface    2.209   H23 URE X    1
+  2nd closest surface     2.218   C8  URE X    1
+  found on step  975
+  this is also current point
+  no. of rejections          401
+ stored as     4
+
+ highest radius point found:
+  at point   39.612  42.952  40.415
+  closest atom surface    2.291   C8  URE X    1
+  2nd closest surface     2.293   H23 URE X    1
+  found on step  782
+ current point:
+  at point   39.614  42.952  40.415
+  closest atom surface    2.290   C8  URE X    1
+  2nd closest surface     2.294   H23 URE X    1
+  found on step  900
+  no. of rejections          384
+ stored as     5
+
+ highest radius point found:
+  at point   39.638  43.125  40.615
+  closest atom surface    2.374   H23 URE X    1
+  2nd closest surface     2.376   C23 URE X    1
+  found on step  807
+ current point:
+  at point   39.646  43.137  40.615
+  closest atom surface    2.373   C9  URE X    1
+  2nd closest surface     2.374   H23 URE X    1
+  found on step  930
+  no. of rejections          351
+ stored as     6
+
+ highest radius point found:
+  at point   39.641  43.310  40.815
+  closest atom surface    2.458   H23 URE X    1
+  2nd closest surface     2.458   C23 URE X    1
+  found on step  974
+  this is also current point
+  no. of rejections          337
+ stored as     7
+
+ highest radius point found:
+  at point   39.762  43.798  41.015
+  closest atom surface    2.553   H23 URE X    1
+  2nd closest surface     2.553   C9  URE X    1
+  found on step  916
+  this is also current point
+  no. of rejections          333
+ stored as     8
+
+ highest radius point found:
+  at point   39.689  44.030  41.215
+  closest atom surface    2.641   H23 URE X    1
+  2nd closest surface     2.642   S5  URE X    1
+  found on step  931
+  this is also current point
+  no. of rejections          292
+ stored as     9
+
+ highest radius point found:
+  at point   39.590  44.291  41.415
+  closest atom surface    2.737   S5  URE X    1
+  2nd closest surface     2.741   H23 URE X    1
+  found on step   34
+ current point:
+  at point   39.587  44.293  41.415
+  closest atom surface    2.737   S5  URE X    1
+  2nd closest surface     2.739   H23 URE X    1
+  found on step  937
+  no. of rejections          276
+ stored as    10
+
+ highest radius point found:
+  at point   39.473  44.541  41.615
+  closest atom surface    2.860   S5  URE X    1
+  2nd closest surface     2.860   H23 URE X    1
+  found on step  960
+  this is also current point
+  no. of rejections          275
+ stored as    11
+
+ highest radius point found:
+  at point   43.410  50.781  41.815
+  closest atom surface    5.612   S5  URE X    1
+  2nd closest surface     5.779   O6  URE X    1
+  found on step 1000
+  this is also current point
+  no. of rejections          162
+ stored as    12
+
+ highest radius point found:
+  at point   47.623  58.687  42.015
+  closest atom surface   13.655   S5  URE X    1
+  2nd closest surface    13.665   O6  URE X    1
+  found on step  999
+  this is also current point
+  no. of rejections          255
+ stored as    13
+
+ highest radius point found:
+  at point   51.941  69.033  42.215
+  closest atom surface   24.497   S5  URE X    1
+  2nd closest surface    24.632   O6  URE X    1
+  found on step  996
+  this is also current point
+  no. of rejections          283
+ This is an end! (radius above  22.0 angs)
+ highest radius point found:
+  at point   39.438  40.124  39.215
+  closest atom surface    2.030   C6  URE X    1
+  2nd closest surface     2.030   C21 URE X    1
+  found on step  929
+  this is also current point
+  no. of rejections          406
+ stored as    -1
+
+ highest radius point found:
+  at point   39.441  40.270  39.015
+  closest atom surface    2.019   C6  URE X    1
+  2nd closest surface     2.020   C22 URE X    1
+  found on step  792
+ current point:
+  at point   39.437  40.244  39.015
+  closest atom surface    2.019   C6  URE X    1
+  2nd closest surface     2.019   C21 URE X    1
+  found on step  911
+  no. of rejections          400
+ stored as    -2
+
+ highest radius point found:
+  at point   39.432  40.335  38.815
+  closest atom surface    2.015   C21 URE X    1
+  2nd closest surface     2.015   C7  URE X    1
+  found on step  260
+ current point:
+  at point   39.430  40.355  38.815
+  closest atom surface    2.014   C7  URE X    1
+  2nd closest surface     2.015   C21 URE X    1
+  found on step  973
+  no. of rejections          398
+ stored as    -3
+
+ highest radius point found:
+  at point   39.425  40.202  38.615
+  closest atom surface    1.999   C21 URE X    1
+  2nd closest surface     2.000   C6  URE X    1
+  found on step  427
+ current point:
+  at point   39.404  40.385  38.615
+  closest atom surface    1.994   C7  URE X    1
+  2nd closest surface     1.994   C21 URE X    1
+  found on step  991
+  no. of rejections          366
+ stored as    -4
+
+ highest radius point found:
+  at point   39.415  40.116  38.415
+  closest atom surface    1.998   C21 URE X    1
+  2nd closest surface     2.002   C6  URE X    1
+  found on step  156
+ current point:
+  at point   39.353  40.656  38.415
+  closest atom surface    1.981   C7  URE X    1
+  2nd closest surface     1.982   C22 URE X    1
+  found on step  950
+  no. of rejections          388
+ stored as    -5
+
+ highest radius point found:
+  at point   39.410  40.011  38.215
+  closest atom surface    2.011   C6  URE X    1
+  2nd closest surface     2.012   C21 URE X    1
+  found on step  952
+  this is also current point
+  no. of rejections          384
+ stored as    -6
+
+ highest radius point found:
+  at point   39.400  39.924  38.015
+  closest atom surface    2.035   C21 URE X    1
+  2nd closest surface     2.037   C7  URE X    1
+  found on step  338
+ current point:
+  at point   39.398  39.916  38.015
+  closest atom surface    2.034   C21 URE X    1
+  2nd closest surface     2.039   C6  URE X    1
+  found on step  988
+  no. of rejections          407
+ stored as    -7
+
+ highest radius point found:
+  at point   39.238  40.963  37.815
+  closest atom surface    2.055   C22 URE X    1
+  2nd closest surface     2.055   C7  URE X    1
+  found on step  985
+  this is also current point
+  no. of rejections          395
+ stored as    -8
+
+ highest radius point found:
+  at point   39.225  40.891  37.615
+  closest atom surface    2.081   C7  URE X    1
+  2nd closest surface     2.081   C21 URE X    1
+  found on step  791
+ current point:
+  at point   39.230  40.846  37.615
+  closest atom surface    2.076   C7  URE X    1
+  2nd closest surface     2.076   C21 URE X    1
+  found on step  994
+  no. of rejections          385
+ stored as    -9
+
+ highest radius point found:
+  at point   39.319  40.040  37.415
+  closest atom surface    2.119   C7  URE X    1
+  2nd closest surface     2.120   C21 URE X    1
+  found on step  642
+ current point:
+  at point   39.259  40.473  37.415
+  closest atom surface    2.098   C21 URE X    1
+  2nd closest surface     2.099   C7  URE X    1
+  found on step  952
+  no. of rejections          389
+ stored as   -10
+
+ highest radius point found:
+  at point   39.279  40.157  37.215
+  closest atom surface    2.160   C21 URE X    1
+  2nd closest surface     2.164   C7  URE X    1
+  found on step  178
+ current point:
+  at point   39.218  40.616  37.215
+  closest atom surface    2.155   C7  URE X    1
+  2nd closest surface     2.155   C21 URE X    1
+  found on step  996
+  no. of rejections          392
+ stored as   -11
+
+ highest radius point found:
+  at point   39.238  40.306  37.015
+  closest atom surface    2.216   C7  URE X    1
+  2nd closest surface     2.216   C21 URE X    1
+  found on step   47
+ current point:
+  at point   39.206  40.544  37.015
+  closest atom surface    2.215   C7  URE X    1
+  2nd closest surface     2.215   C21 URE X    1
+  found on step  989
+  no. of rejections          399
+ stored as   -12
+
+ highest radius point found:
+  at point   39.199  40.431  36.815
+  closest atom surface    2.284   C7  URE X    1
+  2nd closest surface     2.285   C21 URE X    1
+  found on step  903
+  this is also current point
+  no. of rejections          401
+ stored as   -13
+
+ highest radius point found:
+  at point   39.117  40.488  36.615
+  closest atom surface    2.318   H28 URE X    1
+  2nd closest surface     2.319   S   URE X    1
+  found on step  938
+  this is also current point
+  no. of rejections          407
+ stored as   -14
+
+ highest radius point found:
+  at point   39.060  40.539  36.415
+  closest atom surface    2.333   N3  URE X    1
+  2nd closest surface     2.333   S   URE X    1
+  found on step  894
+  this is also current point
+  no. of rejections          413
+ stored as   -15
+
+ highest radius point found:
+  at point   39.047  40.575  36.215
+  closest atom surface    2.348   S   URE X    1
+  2nd closest surface     2.349   H24 URE X    1
+  found on step  933
+  this is also current point
+  no. of rejections          407
+ stored as   -16
+
+ highest radius point found:
+  at point   39.067  40.597  36.015
+  closest atom surface    2.360   S   URE X    1
+  2nd closest surface     2.360   H28 URE X    1
+  found on step  903
+  this is also current point
+  no. of rejections          371
+ stored as   -17
+
+ highest radius point found:
+  at point   39.087  40.619  35.815
+  closest atom surface    2.382   H28 URE X    1
+  2nd closest surface     2.382   S   URE X    1
+  found on step  621
+ current point:
+  at point   39.086  40.621  35.815
+  closest atom surface    2.381   H24 URE X    1
+  2nd closest surface     2.381   H28 URE X    1
+  found on step  995
+  no. of rejections          394
+ stored as   -18
+
+ highest radius point found:
+  at point   39.108  40.642  35.615
+  closest atom surface    2.414   S   URE X    1
+  2nd closest surface     2.414   H28 URE X    1
+  found on step  943
+  this is also current point
+  no. of rejections          377
+ stored as   -19
+
+ highest radius point found:
+  at point   39.125  40.668  35.415
+  closest atom surface    2.458   H24 URE X    1
+  2nd closest surface     2.458   S   URE X    1
+  found on step  962
+  this is also current point
+  no. of rejections          388
+ stored as   -20
+
+ highest radius point found:
+  at point   39.144  40.695  35.215
+  closest atom surface    2.511   S   URE X    1
+  2nd closest surface     2.511   H24 URE X    1
+  found on step  943
+  this is also current point
+  no. of rejections          370
+ stored as   -21
+
+ highest radius point found:
+  at point   39.189  40.713  35.015
+  closest atom surface    2.563   O9  URE X    1
+  2nd closest surface     2.565   H28 URE X    1
+  found on step  794
+ current point:
+  at point   39.177  40.706  35.015
+  closest atom surface    2.560   S   URE X    1
+  2nd closest surface     2.560   O9  URE X    1
+  found on step  981
+  no. of rejections          396
+ stored as   -22
+
+ highest radius point found:
+  at point   39.283  40.707  34.815
+  closest atom surface    2.613   H28 URE X    1
+  2nd closest surface     2.615   S   URE X    1
+  found on step 1000
+  this is also current point
+  no. of rejections          381
+ stored as   -23
+
+ highest radius point found:
+  at point   39.291  40.675  34.615
+  closest atom surface    2.635   O7  URE X    1
+  2nd closest surface     2.636   S   URE X    1
+  found on step  963
+  this is also current point
+  no. of rejections          387
+ stored as   -24
+
+ highest radius point found:
+  at point   39.264  40.632  34.415
+  closest atom surface    2.650   S   URE X    1
+  2nd closest surface     2.651   O7  URE X    1
+  found on step  940
+  this is also current point
+  no. of rejections          395
+ stored as   -25
+
+ highest radius point found:
+  at point   39.234  40.591  34.215
+  closest atom surface    2.674   O9  URE X    1
+  2nd closest surface     2.675   S   URE X    1
+  found on step  498
+ current point:
+  at point   39.238  40.592  34.215
+  closest atom surface    2.674   O7  URE X    1
+  2nd closest surface     2.676   S   URE X    1
+  found on step  993
+  no. of rejections          396
+ stored as   -26
+
+ highest radius point found:
+  at point   39.214  40.547  34.015
+  closest atom surface    2.706   S   URE X    1
+  2nd closest surface     2.708   O7  URE X    1
+  found on step  836
+ current point:
+  at point   39.217  40.543  34.015
+  closest atom surface    2.704   S   URE X    1
+  2nd closest surface     2.707   O7  URE X    1
+  found on step  948
+  no. of rejections          379
+ stored as   -27
+
+ highest radius point found:
+  at point   39.250  40.472  33.815
+  closest atom surface    2.726   O7  URE X    1
+  2nd closest surface     2.726   S   URE X    1
+  found on step  847
+ current point:
+  at point   39.241  40.481  33.815
+  closest atom surface    2.724   O   URE X    1
+  2nd closest surface     2.727   O7  URE X    1
+  found on step  971
+  no. of rejections          378
+ stored as   -28
+
+ highest radius point found:
+  at point   39.295  40.391  33.615
+  closest atom surface    2.749   O   URE X    1
+  2nd closest surface     2.752   O7  URE X    1
+  found on step  115
+ current point:
+  at point   39.164  40.556  33.615
+  closest atom surface    2.740   O7  URE X    1
+  2nd closest surface     2.740   O   URE X    1
+  found on step  994
+  no. of rejections          355
+ stored as   -29
+
+ highest radius point found:
+  at point   39.355  40.304  33.415
+  closest atom surface    2.783   O7  URE X    1
+  2nd closest surface     2.785   S   URE X    1
+  found on step  931
+  this is also current point
+  no. of rejections          404
+ stored as   -30
+
+ highest radius point found:
+  at point   39.389  40.236  33.215
+  closest atom surface    2.830   O7  URE X    1
+  2nd closest surface     2.830   O   URE X    1
+  found on step  959
+  this is also current point
+  no. of rejections          387
+ stored as   -31
+
+ highest radius point found:
+  at point   39.438  40.156  33.015
+  closest atom surface    2.885   O7  URE X    1
+  2nd closest surface     2.887   O   URE X    1
+  found on step  484
+ current point:
+  at point   39.098  40.574  33.015
+  closest atom surface    2.847   O   URE X    1
+  2nd closest surface     2.847   O7  URE X    1
+  found on step  987
+  no. of rejections          358
+ stored as   -32
+
+ highest radius point found:
+  at point   39.495  40.063  32.815
+  closest atom surface    2.953   S   URE X    1
+  2nd closest surface     2.953   O7  URE X    1
+  found on step  752
+ current point:
+  at point   39.486  40.070  32.815
+  closest atom surface    2.950   O   URE X    1
+  2nd closest surface     2.954   O7  URE X    1
+  found on step  950
+  no. of rejections          367
+ stored as   -33
+
+ highest radius point found:
+  at point   39.543  39.984  32.615
+  closest atom surface    3.028   S   URE X    1
+  2nd closest surface     3.028   O7  URE X    1
+  found on step  981
+  this is also current point
+  no. of rejections          377
+ stored as   -34
+
+ highest radius point found:
+  at point   39.585  39.909  32.415
+  closest atom surface    3.112   O   URE X    1
+  2nd closest surface     3.112   O7  URE X    1
+  found on step  990
+  this is also current point
+  no. of rejections          360
+ stored as   -35
+
+ highest radius point found:
+  at point   41.423  38.865  32.215
+  closest atom surface    3.281   O2  URE X    1
+  2nd closest surface     3.281   S   URE X    1
+  found on step  907
+  this is also current point
+  no. of rejections          332
+ stored as   -36
+
+ highest radius point found:
+  at point   41.515  38.767  32.015
+  closest atom surface    3.420   O2  URE X    1
+  2nd closest surface     3.422   O7  URE X    1
+  found on step   96
+ current point:
+  at point   41.517  38.766  32.015
+  closest atom surface    3.420   O2  URE X    1
+  2nd closest surface     3.422   O7  URE X    1
+  found on step  999
+  no. of rejections          287
+ stored as   -37
+
+ highest radius point found:
+  at point   43.392  35.734  31.815
+  closest atom surface    3.834   O2  URE X    1
+  2nd closest surface     3.860   S1  URE X    1
+  found on step  999
+  this is also current point
+  no. of rejections          220
+ stored as   -38
+
+ highest radius point found:
+  at point   47.477  33.638  31.615
+  closest atom surface    6.163   O16 URE X    1
+  2nd closest surface     6.381   O2  URE X    1
+  found on step 1000
+  this is also current point
+  no. of rejections          209
+ stored as   -39
+
+ highest radius point found:
+  at point   56.563  33.992  31.415
+  closest atom surface   13.289   O2  URE X    1
+  2nd closest surface    13.332   O16 URE X    1
+  found on step  996
+  this is also current point
+  no. of rejections          244
+ stored as   -40
+
+ highest radius point found:
+  at point   67.687  31.662  31.215
+  closest atom surface   23.919   O16 URE X    1
+  2nd closest surface    24.241   O2  URE X    1
+  found on step 1000
+  this is also current point
+  no. of rejections          254
+ This is an end! (radius above  22.0 angs)
+ 
+ N.b. Graph information routine (HOGRAP) differs 
+        markedly from previous versions!
+       Information now is written from -ve end
+       to +ve in one pass
+ 
+ Explanation of the meaning of each column: 
+ First column "cenxyz.cvec" is the coordinate in the
+   direction of the channel vector i.e. if the channel
+   vector is in z (0 0 1) then it is the z coordinate.
+ The second column "radius" is the hole pore radius 
+   (as defined in the Biophys J 1993) article).
+ The third column "cen_line_D" is the distance 
+   measured along the pore centre line - with the 
+   first point found set to zero. This was the first
+   thing that I used to measure the distance along a pore
+   but "cenxyz.cvec" is a much better general measure. 
+   However, by comparing changes in this distance to changes in '   "cenxyz.cvec" one can get a measure of how straight a 
+   channel is.
+ The fourth column "sum{s/(area)}" is useful in conductance
+   prediction -
+   basically it is the sum of the thickness of each slab
+   divided by its area. HOLE uses this measure to estimate
+   the macroscopic conductance of a channel.
+ If any of this worries you one can see the "raw" results
+   of a standard hole run by producing a sphpdb file and 
+    directly looking at the results.
+ cenxyz.cvec      radius  cen_line_D sum{s/(area point sourc
+    31.41473    13.28862   -28.74516     0.00018   (sampled)
+    31.51473     9.39823   -24.19771     0.00054 (mid-point)
+    31.61473     6.16261   -19.65026     0.00138   (sampled)
+    31.71473     4.83112   -17.35207     0.00274 (mid-point)
+    31.81473     3.83351   -15.05387     0.00491   (sampled)
+    31.91473     3.31971   -13.26769     0.00780 (mid-point)
+    32.01473     3.42032   -11.48150     0.01052   (sampled)
+    32.11473     3.34965   -11.36113     0.01335 (mid-point)
+    32.21473     3.28090   -11.24077     0.01631   (sampled)
+    32.31473     3.08029   -10.17915     0.01967 (mid-point)
+    32.41473     3.11180    -9.11754     0.02295   (sampled)
+    32.51473     3.06887    -9.00860     0.02633 (mid-point)
+    32.61473     3.02795    -8.89965     0.02981   (sampled)
+    32.71473     2.98938    -8.78946     0.03337 (mid-point)
+    32.81473     2.95296    -8.67927     0.03702   (sampled)
+    32.91473     2.91764    -8.56545     0.04076 (mid-point)
+    33.01473     2.88465    -8.45163     0.04458   (sampled)
+    33.11473     2.85598    -8.34122     0.04848 (mid-point)
+    33.21473     2.82985    -8.23080     0.05246   (sampled)
+    33.31473     2.80531    -8.12371     0.05650 (mid-point)
+    33.41473     2.78322    -8.01662     0.06061   (sampled)
+    33.51473     2.76609    -7.90351     0.06477 (mid-point)
+    33.61473     2.74868    -7.79039     0.06899   (sampled)
+    33.71473     2.73650    -7.68032     0.07324 (mid-point)
+    33.81473     2.72568    -7.57024     0.07752   (sampled)
+    33.91473     2.71498    -7.46186     0.08184 (mid-point)
+    34.01473     2.70629    -7.35347     0.08619   (sampled)
+    34.11473     2.68945    -7.25054     0.09059 (mid-point)
+    34.21473     2.67439    -7.14761     0.09504   (sampled)
+    34.31473     2.66139    -7.04441     0.09953 (mid-point)
+    34.41473     2.65023    -6.94122     0.10406   (sampled)
+    34.51473     2.64182    -6.83806     0.10862 (mid-point)
+    34.61473     2.63534    -6.73489     0.11321   (sampled)
+    34.71473     2.62460    -6.63357     0.11783 (mid-point)
+    34.81473     2.61344    -6.53224     0.12249   (sampled)
+    34.91473     2.58781    -6.42175     0.12724 (mid-point)
+    35.01473     2.56328    -6.31125     0.13209   (sampled)
+    35.11473     2.53766    -6.20833     0.13703 (mid-point)
+    35.21473     2.51094    -6.10540     0.14208   (sampled)
+    35.31473     2.48304    -6.00408     0.14724 (mid-point)
+    35.41473     2.45774    -5.90276     0.15251   (sampled)
+    35.51473     2.43504    -5.80153     0.15788 (mid-point)
+    35.61473     2.41406    -5.70030     0.16334   (sampled)
+    35.71473     2.39655    -5.59911     0.16888 (mid-point)
+    35.81473     2.38177    -5.49792     0.17449   (sampled)
+    35.91473     2.36941    -5.39682     0.18016 (mid-point)
+    36.01473     2.35996    -5.29572     0.18588   (sampled)
+    36.11473     2.35280    -5.19461     0.19163 (mid-point)
+    36.21473     2.34798    -5.09351     0.19740   (sampled)
+    36.31473     2.33954    -4.99161     0.20322 (mid-point)
+    36.41473     2.33312    -4.88972     0.20907   (sampled)
+    36.51473     2.32475    -4.78268     0.21496 (mid-point)
+    36.61473     2.31818    -4.67565     0.22088   (sampled)
+    36.71473     2.30063    -4.56383     0.22689 (mid-point)
+    36.81473     2.28439    -4.45202     0.23299   (sampled)
+    36.91473     2.24841    -4.33245     0.23929 (mid-point)
+    37.01473     2.21563    -4.21288     0.24577   (sampled)
+    37.11473     2.18595    -4.08680     0.25244 (mid-point)
+    37.21473     2.15985    -3.96072     0.25926   (sampled)
+    37.31473     2.13843    -3.84303     0.26622 (mid-point)
+    37.41473     2.11894    -3.72534     0.27331   (sampled)
+    37.51473     2.07523    -3.28567     0.28070 (mid-point)
+    37.61473     2.08053    -2.84601     0.28805   (sampled)
+    37.71473     2.06636    -2.73961     0.29551 (mid-point)
+    37.81473     2.05503    -2.63322     0.30305   (sampled)
+    37.91473     2.00924    -2.09800     0.31093 (mid-point)
+    38.01473     2.03547    -1.56279     0.31861   (sampled)
+    38.11473     2.02232    -1.45350     0.32640 (mid-point)
+    38.21473     2.01102    -1.34421     0.33427   (sampled)
+    38.31473     2.00326    -1.23136     0.34220 (mid-point)
+    38.41473     1.99760    -1.11850     0.35018   (sampled)
+    38.51473     1.99683    -1.00941     0.35816 (mid-point)
+    38.61473     1.99916    -0.90032     0.36612   (sampled)
+    38.71473     2.00497    -0.78020     0.37404 (mid-point)
+    38.81473     2.01452    -0.66007     0.38189   (sampled)
+    38.91473     2.01797    -0.55478     0.38970 (mid-point)
+    39.01473     2.01935    -0.44948     0.39751   (sampled)
+    39.11473     2.02271    -0.32581     0.40529 (mid-point)
+    39.21473     2.03001    -0.20215     0.41301   (sampled)
+    39.31473     2.03913    -0.10107     0.42067 (mid-point)
+    39.41473     2.04966     0.00000     0.42824   (sampled)
+    39.51473     2.06470     0.10880     0.43571 (mid-point)
+    39.61473     2.08151     0.21759     0.44306   (sampled)
+    39.71473     2.06875     0.66412     0.45050 (mid-point)
+    39.81473     2.09737     1.11064     0.45773   (sampled)
+    39.91473     2.10509     1.22100     0.46491 (mid-point)
+    40.01473     2.11445     1.33135     0.47203   (sampled)
+    40.11473     2.05824     2.28604     0.47955 (mid-point)
+    40.21473     2.20907     3.24072     0.48607   (sampled)
+    40.31473     2.24888     3.36472     0.49236 (mid-point)
+    40.41473     2.29149     3.48871     0.49843   (sampled)
+    40.51473     2.33100     3.62164     0.50428 (mid-point)
+    40.61473     2.37395     3.75456     0.50993   (sampled)
+    40.71473     2.41332     3.89064     0.51540 (mid-point)
+    40.81473     2.45760     4.02672     0.52067   (sampled)
+    40.91473     2.49502     4.29748     0.52578 (mid-point)
+    41.01473     2.55273     4.56825     0.53067   (sampled)
+    41.11473     2.59391     4.72578     0.53540 (mid-point)
+    41.21473     2.64144     4.88330     0.53996   (sampled)
+    41.31473     2.68649     5.05497     0.54437 (mid-point)
+    41.41473     2.73690     5.22664     0.54862   (sampled)
+    41.51473     2.79571     5.39714     0.55269 (mid-point)
+    41.61473     2.85979     5.56765     0.55658   (sampled)
+    41.71473     3.21195     9.25807     0.55967 (mid-point)
+    41.81473     5.61246    12.94849     0.56068   (sampled)
+    41.91473     9.46480    17.42900     0.56104 (mid-point)
+    42.01473    13.65514    21.90951     0.56121   (sampled)
+
+ Minimum radius found:      1.997 angstroms.
+
+
+
+ For spherical probe approach, The geometric factor
+         F= sum(ds/area) along channel is    0.561 angstroms**-1
+ This yields a macroscopic predicted molar conductance of:
+   (1/rho)*(100/F)= (180/rho) pS,
+   where rho is the conductivity of 1M permeant ion in ohm m.
+ N.B. this is a macroscopic conductance - an overestimate 
+ Empirically corrected conductances currently only available
+ With the CAPSULE option (although its not that stable!)
+ For 1M KCl rho= 1/12 (ohm m), So Gmacro= 2100 pS/M.
+  (TAG      1   Rmin=     1.99683   Gmacro=  2138.25183 Conn_Gmacro=    -1.00000 ).
+ HOLE: normal completion

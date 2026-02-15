@@ -1,0 +1,42 @@
+Loading python/3.12.11
+  Loading requirement: tcl/8.6.12
+/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/analysis/hole2/__init__.py:58: DeprecationWarning: Deprecated in version 2.8.0
+MDAnalysis.analysis.hole2 is deprecated in favour of the MDAKit madahole2 (https://www.mdanalysis.org/mdahole2/) and will be removed in MDAnalysis version 3.0.0
+  warnings.warn(wmsg, category=DeprecationWarning)
+Traceback (most recent call last):
+  File "/afs/crc.nd.edu/user/m/mfarshad/Private/ML-new/traj/host-49/pore_diameter.py", line 61, in <module>
+    u = mda.Universe(pdb, trr)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/core/universe.py", line 417, in __init__
+    topology = _topology_from_file_like(self.filename,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/core/universe.py", line 121, in _topology_from_file_like
+    raise sys.exc_info()[1] from err
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/core/universe.py", line 113, in _topology_from_file_like
+    topology = p.parse(**kwargs)
+               ^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/topology/GROParser.py", line 88, in parse
+    with openany(self.filename) as inf:
+  File "/afs/crc.nd.edu/x86_64_linux/c/conda/24.7.1/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/lib/util.py", line 326, in openany
+    stream = anyopen(datasource, mode=mode, reset=reset)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/lib/util.py", line 408, in anyopen
+    stream = _get_stream(datasource, openfunc, mode=mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/lib/util.py", line 468, in _get_stream
+    raise sys.exc_info()[1] from err
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/lib/util.py", line 462, in _get_stream
+    stream = openfunction(filename, mode=mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/lib/picklable_file_io.py", line 540, in bz2_pickle_open
+    binary_file = BZ2Picklable(name, bz_mode)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/mfarshad/.local/lib/python3.12/site-packages/MDAnalysis/lib/picklable_file_io.py", line 309, in __init__
+    super().__init__(name, mode)
+  File "/afs/crc.nd.edu/x86_64_linux/c/conda/24.7.1/lib/python3.12/bz2.py", line 81, in __init__
+    self._fp = _builtin_open(filename, mode)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/afs/crc.nd.edu/user/m/mfarshad/Private/ML-new/traj/host-49/host_49.gro'
