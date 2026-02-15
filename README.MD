@@ -68,7 +68,25 @@ This repository implements an integrated simulation–machine-learning workflow 
 - `python gpr-random_seed-paper.py` (paper GP figure)
 - `python gpr-pca-active-learning-v03.py` (tables 2 and S4)
 
-## 📦 Outputs (per your scripts)
-- PCA figures (variance explained, loadings, labeled/unlabeled PCA plots)
-- GP parity/performance figures
-- GP outputs used for paper tables (e.g., Tables 2 and S4)
+## Notes on external tools (WHAM / HOLE) and provided outputs
+
+Some parts of the original workflow rely on external tools and/or simulation data that are not included in this repository.  
+To keep the full ML/PCA/GP analysis reproducible, we provide the processed outputs those tools generate.
+
+### WHAM (umbrella sampling free energies)
+The original WHAM input data (umbrella windows / trajectories and WHAM intermediate files) are not included.  
+Instead, we provide the final processed targets used for ML:
+
+- `targets/output.txt` — binding free energies extracted from WHAM and used as the regression targets.
+
+With `targets/output.txt` available, you can reproduce descriptor processing, PCA, GP regression, and the paper figures/tables without re-running WHAM.  
+If you have access to the WHAM inputs, the scripts in `targets/` (e.g., `run_wham.sh`, `run_python.sh`) document how `output.txt` was generated.
+
+### HOLE (pore geometry)
+Computing pore-diameter profiles requires the HOLE program, which may not be available to all users.  
+To support reproducibility without HOLE, we provide the precomputed pore-diameter outputs in each host folder (e.g., files matching `diameter_profile*`).
+
+With these precomputed diameter profiles present, you can run the pore-geometry aggregation step directly:
+
+```bash
+python combine-all-props-v02.py host-*/diameter_profile*
