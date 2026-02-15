@@ -53,7 +53,7 @@ run_1 = current_dir
 name = current_dir.split("host-")[1]
 
 # for run_1 in run_names:
-pp = PdfPages('pore_distribution_' + str(run_1) + '.pdf')
+pp = PdfPages('pore_distribution_' + str(name) + '.pdf')
 fig, axes = plt.subplots(1, 2, figsize=(8, 4))
 
 pdb = os.path.join(folder_path, run_1, f'host_{name}.gro')
@@ -78,40 +78,40 @@ axes[0].plot(midpoints, means, '-o', color='k')
 axes[0].set_xlabel(r'$\mathbf{\textbf{Pore\ coordinate}\ \zeta\ (\AA)}$', labelpad=10, fontsize=20)
 axes[0].set_ylabel(r'$\mathbf{\textbf{Mean\ pore\ radius}\ (\AA)}$', labelpad=10, fontsize=20)
 
-diameter_middle_all = []
-diameter_all = []
+radius_middle_all = []
+radius_all = []
 for i in range(0, len(ha.results.profiles)):
     middle_ndx = int(len(ha.results.profiles[i]) / 2)
     if len(ha.results.profiles[i]) == 0:
         continue
-    diameter_middle = ha.results.profiles[i][middle_ndx][1]
-    diameter_middle_all = np.append(diameter_middle_all, diameter_middle)
+    radius_middle = ha.results.profiles[i][middle_ndx][1]
+    radius_middle_all = np.append(radius_middle_all, radius_middle)
     for j in range(0, len(ha.results.profiles[i])):
-        diameter = ha.results.profiles[i][j][1]
-        diameter_all = np.append(diameter_all, diameter)
+        radius = ha.results.profiles[i][j][1]
+        radius_all = np.append(radius_all, radius)
 
-hist_middle_all, edges = np.histogram(diameter_middle_all)
+hist_middle_all, edges = np.histogram(radius_middle_all)
 hist_middle_all = hist_middle_all / np.sum(hist_middle_all)
 
-hist_all, edges = np.histogram(diameter_all)
+hist_all, edges = np.histogram(radius_all)
 hist_all = hist_all / np.sum(hist_all)
 
 midpoints = 0.5 * (edges[1:] + edges[:-1])
 
-print('average diameter middle radii = ', np.mean(diameter_middle_all))
-print('average diameter all radii = ', np.mean(diameter_all))
+print('average radius middle radii = ', np.mean(radius_middle_all))
+print('average radius all radii = ', np.mean(radius_all))
 
-output_file_path = f'min_diameter_profile_{run_1}.csv'
-np.savetxt(output_file_path, [min(means)], delimiter=',', header='Min diameter_profile (Å)', comments='')
+output_file_path = f'min_radius_profile_{name}.csv'
+np.savetxt(output_file_path, [min(means)], delimiter=',', header='Min radius_profile (Å)', comments='')
 
-output_file_path = f'diameter_profile_{run_1}.csv'
-np.savetxt(output_file_path, [means], delimiter=',', header='Diameter profile (Å)', comments='')
+output_file_path = f'radius_profile_{name}.csv'
+np.savetxt(output_file_path, [means], delimiter=',', header='Radius profile (Å)', comments='')
 
-output_file_path = f'average_diameter_{run_1}.csv'
-np.savetxt(output_file_path, [np.mean(diameter_all)], delimiter=',', header='Average Diameter (Å)', comments='')
+output_file_path = f'average_radius_{name}.csv'
+np.savetxt(output_file_path, [np.mean(radius_all)], delimiter=',', header='Average Radius (Å)', comments='')
 
-output_file_path = f'diameter_distribution_{run_1}.csv'
-np.savetxt(output_file_path, [diameter_all], delimiter=',', header='Diameter distribution(Å)', comments='')
+output_file_path = f'radius_distribution_{name}.csv'
+np.savetxt(output_file_path, [radius_all], delimiter=',', header='Radius distribution(Å)', comments='')
 
 axes[1].plot(midpoints, hist_middle_all, '-o', color='k')
 axes[1].plot(midpoints, hist_all, '-o', color='k')
@@ -119,7 +119,7 @@ axes[1].plot(midpoints, hist_all, '-o', color='k')
 axes[1].set_xlabel(r'$\mathbf{\textbf{Pore\ distribution}\ (\AA)}$', labelpad=10, fontsize=20)
 axes[1].set_ylabel(r'$\textbf{Probability}$', labelpad=16, fontsize=20)
 
-ha.create_vmd_surface(filename= str(run_1)+'.vmd')
+ha.create_vmd_surface(filename= str(name)+'.vmd')
 
 hole_path = '/afs/crc.nd.edu/user/m/mfarshad/Private/ML/'  # Replace with the actual path
 

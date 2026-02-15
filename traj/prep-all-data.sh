@@ -44,7 +44,7 @@ for x in host_*.mol2; do (./change_names_mol2.sh $x "fixed_$x"); done
 cd ..
 
 # get rdkit peoperties from mol2 files
-for x in all-host-mol2s/fixed_host_*.mol2; do python get-host-prop-v07.py $x; done
+for x in all-host-mol2s/fixed_host_*.mol2; do python get-host-prop-v09.py $x; done
 
 # # copy trajectories from host folders to pore_diameter - must be run by Mohsen
 # 'for x in host-*; do (cp $x/*trr $x/*gro $x/*mol2 pore_diameter/) done
@@ -66,7 +66,7 @@ for x in all-host-mol2s/fixed_host_*.mol2; do python get-host-prop-v07.py $x; do
 for x in host-*; do (cd $x; python pore_diameter_single.py); done
 
 # submit as job all at once from Private/ML/traj directory
-./run_python.sh
+#./run_python.sh
 
 # for x in */diameter_profile*; do python combine-all-props.py $x; done # this version adds avg and std pore diameter
 for x in host-*/diameter_profile*; do python combine-all-props-v02.py $x; done # this version adds only avg pore diameter
