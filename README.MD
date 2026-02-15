@@ -18,20 +18,10 @@ This repository implements an integrated simulation–machine-learning workflow 
 
 ## 🗂️ Analysis pipeline (as used in this project)
 
-**Environment**
-- `conda activate rdkit`
-
+Go to "traj" folder in "ML-new2/traj"
 **Data preparation and descriptor generation**
-- Move/curate mol2 files into the working directory structure:
-  - `bash mv_mol2.sh`
-  - `bash delete-mol2.sh`
-  - `bash mv_files.sh`
-- Collect mol2 files into a single folder:
-  - copy `host_*.mol2` into `all-host-mol2s/`
-- Fix mol2 atom naming:
-  - `./change_names_mol2.sh host_*.mol2 fixed_host_*.mol2`
 - Extract RDKit descriptors from fixed mol2 files:
-  - `python get-host-prop-v07.py all-host-mol2s/fixed_host_*.mol2`
+  - `python get-host-prop-v10.py all-host-mol2s/fixed_host_*.mol2`
 
 **Pore geometry (HOLE-based)**
 - Compute pore diameter profiles per host:
