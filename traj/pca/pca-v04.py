@@ -42,7 +42,9 @@ df = data.iloc[:, 2:25:1]
 features = [col for col in df.columns if col != 'dG']
 features = [col for col in features if col != 'mean_ring_planarity' and col != 'mean_ring_planarity' and col != 'mean_ring_planarity']
 # features = [col for col in features if col != 'num_sulfurs' and col != 'num_sulfurs' and col != 'num_sulfurs']
+# %%
 features = [col for col in features if col != 'num_electroneg_1_3_neighbors' and col != 'pore_std' and col != 'pore_std']
+
 
 # Reference numbers for features (1..N) for plotting and LaTeX table
 feature_ids = list(range(1, len(features) + 1))

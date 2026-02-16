@@ -35,7 +35,7 @@ rc('ytick', labelsize=16)
 
 # Read the CSV file into a DataFrame
 data = pd.read_csv(
-    '/afs/crc.nd.edu/user/m/mfarshad/Private/ML-new/traj/all-host-props-nopore/all_host_props_training.csv'
+    '/afs/crc.nd.edu/user/m/mfarshad/Private/ML-new2/traj/all-host-props-nopore/all_host_props_training.csv'
 )
 
 # Use the first row (excluding the first column) as DataFrame df
